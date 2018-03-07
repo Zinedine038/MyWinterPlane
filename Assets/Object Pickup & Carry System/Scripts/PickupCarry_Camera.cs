@@ -72,13 +72,26 @@ public class PickupCarry_Camera : MonoBehaviour
 
                        if (hitObj.GetComponent<PickupCarry_Object>() != null && hitObj != null)
                        {
-                           PickUpObject(hitObj);
+                            if(hitObj.GetComponent<PickupCarry_Object>().pickupable==true)
+                            {
+                                PickUpObject(hitObj);
+                                print(hitObj.transform.name);
+                            }
                        }
                     }
                 }
                 else
                 {
-                    DropCurrentObject();
+                    if(currentObject.GetComponent<Interactable>().interactable == Interactables.AirplanePart && CheckMark.instance.Status()==true)
+                    {
+                        GameObject current = currentObject;
+                        DropCurrentObject();
+                        current.GetComponent<AirplanePart>().Attach();
+                    }
+                    else
+                    {
+                        DropCurrentObject();
+                    }
                 }
             }
         }
@@ -111,14 +124,14 @@ public class PickupCarry_Camera : MonoBehaviour
 
         if (isCarrying  && allowRotation)
         {
-            if(Input.GetKey(rotateL))
+            if(Input.GetAxis(("Mouse ScrollWheel"))>0)
             {
-                currentObject.transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0));
+                currentObject.transform.Rotate(new Vector3(rotateSpeed * Time.deltaTime,0, 0));
             }
 
-            if (Input.GetKey(rotateR))
+            if (Input.GetAxis(("Mouse ScrollWheel")) < 0)
             {
-                currentObject.transform.Rotate(new Vector3(0, -(rotateSpeed * Time.deltaTime), 0));
+                currentObject.transform.Rotate(new Vector3(-rotateSpeed * Time.deltaTime, 0, 0));
             }
         }
     }
