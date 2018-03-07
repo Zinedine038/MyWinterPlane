@@ -1,0 +1,32 @@
+How to make 'Object Pickup & Carry System' work with your game.
+
+STEP I: PREPARE YOUR PLAYERS CAMERA
+
+	- At this point you have two options: Do it manually or use a prefab.
+
+	I.1 - PREFAB:
+	
+	(- Delete the player's current camera)
+	- Navigate to the 'Prefabs' folder
+	- Chose either 'Camera' or 'Camera_Crosshair' and attach it to your player.
+	(- Make it work with your current character controller)
+	
+	
+	I.2 - MANUAL:
+
+	- Navigate to 'Scripts'
+	- Apply 'PickupCarry_Camera' to the player's camera
+	- Create an empty GameObject (I suggest to make it a child of the camera) and position it to your liking.
+	  This will be the target.
+	- Drag the target GameObject onto 'Target' in your camera's 'Pickup Carry_Camera' component.
+
+
+STEP II: CREATE OBJECTS
+
+	- To make a GameObject pickable, you simply have to attach the 'PickupCarry_Object' script to it.
+	  BUT BE CAREFUL! In order for everything to work correctly, every pickable object needs a collider!
+
+
+At this point everything should work fine.
+Edit the settings to make everything fit your needs.
+
