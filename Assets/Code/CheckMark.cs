@@ -15,7 +15,7 @@ public class CheckMark : MonoBehaviour {
     public void Set(bool status)
     {
         this.status=status;
-        GetComponent<Image>().enabled=true;
+        GetComponent<Image>().enabled=status;
     }
     public bool Status()
     {

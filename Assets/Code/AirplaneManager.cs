@@ -15,7 +15,6 @@ public class AirplaneManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        print(GetComponent<Rigidbody>().velocity);
         if(engineOn)
         {
             if (thrust > 30)
