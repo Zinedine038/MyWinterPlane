@@ -7,6 +7,7 @@ public class AirplaneManager : MonoBehaviour {
     public float thrust;
     public GameObject propellor;
     public bool engineOn;
+    public GameObject rearLift, leftWingThing, rightWingThing;  
 	// Use this for initialization
 	void Start () {
         GetComponent<AudioSource>().mute = !engineOn;
@@ -33,6 +34,18 @@ public class AirplaneManager : MonoBehaviour {
         Ignition();
         Propell();
         Throttle();
+        rearLift.transform.localEulerAngles = new Vector3(0,0,Input.GetAxis("Vertical")*40);
+        if(Input.GetAxis("Horizontal")<0)
+        {
+            leftWingThing.transform.localEulerAngles = new Vector3(0, 0, Input.GetAxis("Horizontal") * 40);
+            rightWingThing.transform.localEulerAngles = new Vector3(0, 0, -Input.GetAxis("Horizontal") * 40);
+        }
+        else if(Input.GetAxis("Horizontal")>0)
+        {
+            leftWingThing.transform.localEulerAngles = new Vector3(0, 0, -Input.GetAxis("Horizontal") * 40);
+            rightWingThing.transform.localEulerAngles = new Vector3(0, 0, Input.GetAxis("Horizontal") * 40);
+        }
+
     }
 
     void Brake()
@@ -74,8 +87,9 @@ public class AirplaneManager : MonoBehaviour {
             }
             propellor.transform.Rotate(180 * thrust * Time.deltaTime / 6.66f, 0, 0);
         }
-        transform.Rotate(Input.GetAxis("Vertical") * 0.33F, 0.0f, -Input.GetAxis("Horizontal") * 0.75F);
+        transform.Rotate(Input.GetAxis("Vertical") * 0.75f, Input.GetAxis("Horizontal") * 0.33f + Input.GetAxis("Rudder"), -Input.GetAxis("Horizontal") * 1F);
         transform.position+=transform.forward*Time.deltaTime*thrust;
+        
     }
 
     public void Throttle()
