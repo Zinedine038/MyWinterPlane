@@ -42,7 +42,7 @@ public class AirplaneManager : MonoBehaviour {
 
     public void Ignition()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown("joystick button 1"))
         {
             engineOn = !engineOn;
             GetComponent<AudioSource>().mute = !engineOn;
@@ -80,7 +80,7 @@ public class AirplaneManager : MonoBehaviour {
 
     public void Throttle()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && engineOn)
+        if (Input.GetKey("joystick button 5") && engineOn)
         {
             if (thrust < maxThrust)
             {
@@ -91,7 +91,7 @@ public class AirplaneManager : MonoBehaviour {
                 }
             }
         }
-        if (Input.GetKey(KeyCode.LeftControl) && engineOn)
+        if (Input.GetKey("joystick button 3") && engineOn)
         {
             if (thrust > 0)
             {
@@ -102,5 +102,6 @@ public class AirplaneManager : MonoBehaviour {
                 }
             }
         }
+
     }
 }
