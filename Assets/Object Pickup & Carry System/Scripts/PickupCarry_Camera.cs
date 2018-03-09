@@ -162,7 +162,7 @@ public class PickupCarry_Camera : MonoBehaviour
         {
             float yRot = currentObject.transform.rotation.eulerAngles.y;
             float direction = Mathf.RoundToInt(yRot / 90.0f) * 90.0f;
-            currentObject.transform.rotation = Quaternion.Euler(0, direction, 0);
+            //currentObject.transform.rotation = Quaternion.Euler(0, direction, 0);
             currentObject.GetComponent<Rigidbody>().useGravity = false;
         }
 

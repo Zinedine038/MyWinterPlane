@@ -27,7 +27,7 @@ public class AirplaneManager : MonoBehaviour {
                 GetComponent<Rigidbody>().useGravity = true;
             }
         }
-        if(Input.GetButton("Jump"))
+        if(Input.GetButton("Jump")|| Input.GetKey("joystick button 2"))
         {
             Brake();
         }
@@ -37,11 +37,13 @@ public class AirplaneManager : MonoBehaviour {
         rearLift.transform.localEulerAngles = new Vector3(0,0,Input.GetAxis("Vertical")*40);
         if(Input.GetAxis("Horizontal")<0)
         {
-            leftWingThing.transform.localEulerAngles = new Vector3(0, 0, Input.GetAxis("Horizontal") * 40);
-            rightWingThing.transform.localEulerAngles = new Vector3(0, 0, -Input.GetAxis("Horizontal") * 40);
+            print("lol");
+            leftWingThing.transform.localEulerAngles = new Vector3(0, 0, -Input.GetAxis("Horizontal") * 40);
+            rightWingThing.transform.localEulerAngles = new Vector3(0, 0, Input.GetAxis("Horizontal") * 40);
         }
         else if(Input.GetAxis("Horizontal")>0)
         {
+            print("lol2");
             leftWingThing.transform.localEulerAngles = new Vector3(0, 0, -Input.GetAxis("Horizontal") * 40);
             rightWingThing.transform.localEulerAngles = new Vector3(0, 0, Input.GetAxis("Horizontal") * 40);
         }
@@ -87,7 +89,7 @@ public class AirplaneManager : MonoBehaviour {
             }
             propellor.transform.Rotate(180 * thrust * Time.deltaTime / 6.66f, 0, 0);
         }
-        transform.Rotate(Input.GetAxis("Vertical") * 0.75f, Input.GetAxis("Horizontal") * 0.33f + Input.GetAxis("Rudder"), -Input.GetAxis("Horizontal") * 1F);
+        transform.Rotate(Input.GetAxis("Vertical") * 0.75f, Input.GetAxis("Horizontal") * 0.33f, -Input.GetAxis("Horizontal") * 1F);
         transform.position+=transform.forward*Time.deltaTime*thrust;
         
     }
