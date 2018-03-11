@@ -6,7 +6,9 @@ public class AirplanePart : Interactable
 {
     public string partName;
     private GameObject lastObjectPassed;
-    bool attached = false;
+
+    [HideInInspector]
+    public bool attached = false;
     public void Update()
     {
         for (int i = 0; i < 20; i++)
@@ -53,6 +55,7 @@ public class AirplanePart : Interactable
         transform.eulerAngles=Vector3.zero;
         lastObjectPassed = null;
         CheckMark.instance.Set(false);
+        //GetComponent<Collider>().enabled=false;
     }
 
     public void Detach()
@@ -61,6 +64,7 @@ public class AirplanePart : Interactable
         GetComponent<PickupCarry_Object>().pickupable = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         transform.parent=null;
+        GetComponent<Collider>().enabled = true;
     }
 
 
