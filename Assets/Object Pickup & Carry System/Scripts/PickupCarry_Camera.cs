@@ -76,6 +76,10 @@ public class PickupCarry_Camera : MonoBehaviour
                             {
                                 PickUpObject(hitObj);
                                 print(hitObj.transform.name);
+                                if(hitObj.GetComponent<AirplanePart>() != null)
+                                {
+                                    hitObj.GetComponent<AirplanePart>().beingcarried=true;
+                                }
                             }
                        }
                     }
@@ -87,9 +91,14 @@ public class PickupCarry_Camera : MonoBehaviour
                         GameObject current = currentObject;
                         DropCurrentObject();
                         current.GetComponent<AirplanePart>().Attach();
+                        current.GetComponent<AirplanePart>().beingcarried = false;
                     }
                     else
                     {
+                        if (currentObject.GetComponent<AirplanePart>()!=null)
+                        {
+                            currentObject.GetComponent<AirplanePart>().beingcarried=false;
+                        }
                         DropCurrentObject();
                     }
                 }
@@ -110,7 +119,7 @@ public class PickupCarry_Camera : MonoBehaviour
 
                         if (hitObj.GetComponent<PickupCarry_Object>() != null && hitObj != null)
                         {
-                            PickUpObject(hitObj);
+                            PickUpObject(hitObj); 
                         }
                     }
                 }

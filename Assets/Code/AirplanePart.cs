@@ -6,9 +6,11 @@ public class AirplanePart : Interactable
 {
     public string partName;
     private GameObject lastObjectPassed;
+    public string[] requiredOtherParts;
 
     [HideInInspector]
     public bool attached = false;
+    public bool beingcarried;
     public void Update()
     {
         for (int i = 0; i < 20; i++)
@@ -28,11 +30,11 @@ public class AirplanePart : Interactable
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!attached)
+        if(!attached && beingcarried)
         {
             if (other.transform.GetComponent<AttachableSpot>())
             {
-                if (other.transform.GetComponent<AttachableSpot>().CanAttach(partName))
+                if (other.transform.GetComponent<AttachableSpot>().CanAttach(partName) && EngineManager.instance.PartsIncluded(requiredOtherParts))
                 {
                     print("canAttach");
                     lastObjectPassed = other.gameObject;
@@ -44,11 +46,11 @@ public class AirplanePart : Interactable
 
     private void OnTriggerStay(Collider other)
     {
-        if (!attached)
+        if (!attached && beingcarried)
         {
             if (other.transform.GetComponent<AttachableSpot>())
             {
-                if (other.transform.GetComponent<AttachableSpot>().CanAttach(partName))
+                if (other.transform.GetComponent<AttachableSpot>().CanAttach(partName) && EngineManager.instance.PartsIncluded(requiredOtherParts))
                 {
                     print("canAttach");
                     lastObjectPassed = other.gameObject;
@@ -78,6 +80,7 @@ public class AirplanePart : Interactable
         transform.eulerAngles=Vector3.zero;
         lastObjectPassed = null;
         CheckMark.instance.Set(false);
+        EngineManager.instance.AddPart(partName);
         //GetComponent<Collider>().enabled=false;
     }
 
@@ -88,6 +91,7 @@ public class AirplanePart : Interactable
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         transform.parent=null;
         GetComponent<Collider>().enabled = true;
+        EngineManager.instance.RemovePart(partName);
     }
 
 
