@@ -78,7 +78,7 @@ public class AirplanePart : Interactable
         transform.eulerAngles=Vector3.zero;
         lastObjectPassed = null;
         CheckMark.instance.Set(false);
-        GetComponent<Collider>().enabled=false;
+        //GetComponent<Collider>().enabled=false;
     }
 
     public void Detach()
