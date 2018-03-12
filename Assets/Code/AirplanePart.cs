@@ -28,21 +28,44 @@ public class AirplanePart : Interactable
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.GetComponent<AttachableSpot>())
+        if(!attached)
         {
-            if(other.transform.GetComponent<AttachableSpot>().CanAttach(partName))
+            if (other.transform.GetComponent<AttachableSpot>())
             {
-                print("canAttach");
-                lastObjectPassed=other.gameObject;
-                CheckMark.instance.Set(true);
+                if (other.transform.GetComponent<AttachableSpot>().CanAttach(partName))
+                {
+                    print("canAttach");
+                    lastObjectPassed = other.gameObject;
+                    CheckMark.instance.Set(true);
+                }
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!attached)
+        {
+            if (other.transform.GetComponent<AttachableSpot>())
+            {
+                if (other.transform.GetComponent<AttachableSpot>().CanAttach(partName))
+                {
+                    print("canAttach");
+                    lastObjectPassed = other.gameObject;
+                    CheckMark.instance.Set(true);
+                }
             }
         }
     }
 
     private void OnTriggerExit()
     {
-        lastObjectPassed = null;
-        CheckMark.instance.Set(false);
+        if(!attached)
+        {
+            lastObjectPassed = null;
+            CheckMark.instance.Set(false);
+        }
+
     }
 
     public void Attach()
@@ -55,7 +78,7 @@ public class AirplanePart : Interactable
         transform.eulerAngles=Vector3.zero;
         lastObjectPassed = null;
         CheckMark.instance.Set(false);
-        //GetComponent<Collider>().enabled=false;
+        GetComponent<Collider>().enabled=false;
     }
 
     public void Detach()
