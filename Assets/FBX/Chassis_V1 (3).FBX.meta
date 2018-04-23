@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: 640a2fe3bf5ca3c48ab1b6650f483989
+timeCreated: 1522067025
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: ' WheelHub'
+    100002: ' WheelHub001'
+    100004: ' WheelHub002'
+    100006: Aileron
+    100008: Aileron001
+    100010: BackWing001
+    100012: BackWing002
+    100014: Chassis
+    100016: //RootNode
+    100018: Door
+    100020: Door001
+    100022: EngineCompartment
+    100024: EngineCompartment001
+    100026: Gear
+    100028: Prop
+    100030: RearRudder
+    100032: seat
+    100034: seat001
+    100036: Steer
+    100038: Wheel
+    100040: Wheel001
+    100042: Wheel002
+    100044: Windows
+    100046: Wing
+    100048: Wing001
+    100050: WingRudder
+    100052: WingRudder001
+    400000: ' WheelHub'
+    400002: ' WheelHub001'
+    400004: ' WheelHub002'
+    400006: Aileron
+    400008: Aileron001
+    400010: BackWing001
+    400012: BackWing002
+    400014: Chassis
+    400016: //RootNode
+    400018: Door
+    400020: Door001
+    400022: EngineCompartment
+    400024: EngineCompartment001
+    400026: Gear
+    400028: Prop
+    400030: RearRudder
+    400032: seat
+    400034: seat001
+    400036: Steer
+    400038: Wheel
+    400040: Wheel001
+    400042: Wheel002
+    400044: Windows
+    400046: Wing
+    400048: Wing001
+    400050: WingRudder
+    400052: WingRudder001
+    2300000: ' WheelHub'
+    2300002: ' WheelHub001'
+    2300004: ' WheelHub002'
+    2300006: Aileron
+    2300008: Aileron001
+    2300010: BackWing001
+    2300012: BackWing002
+    2300014: Chassis
+    2300016: Door
+    2300018: Door001
+    2300020: EngineCompartment
+    2300022: EngineCompartment001
+    2300024: Gear
+    2300026: Prop
+    2300028: RearRudder
+    2300030: seat
+    2300032: seat001
+    2300034: Steer
+    2300036: Wheel
+    2300038: Wheel001
+    2300040: Wheel002
+    2300042: Windows
+    2300044: Wing
+    2300046: Wing001
+    2300048: WingRudder
+    2300050: WingRudder001
+    3300000: ' WheelHub'
+    3300002: ' WheelHub001'
+    3300004: ' WheelHub002'
+    3300006: Aileron
+    3300008: Aileron001
+    3300010: BackWing001
+    3300012: BackWing002
+    3300014: Chassis
+    3300016: Door
+    3300018: Door001
+    3300020: EngineCompartment
+    3300022: EngineCompartment001
+    3300024: Gear
+    3300026: Prop
+    3300028: RearRudder
+    3300030: seat
+    3300032: seat001
+    3300034: Steer
+    3300036: Wheel
+    3300038: Wheel001
+    3300040: Wheel002
+    3300042: Windows
+    3300044: Wing
+    3300046: Wing001
+    3300048: WingRudder
+    3300050: WingRudder001
+    4300000: ' WheelHub'
+    4300002: Wheel
+    4300004: ' WheelHub001'
+    4300006: Wheel001
+    4300008: BackWing001
+    4300010: Aileron
+    4300012: Door
+    4300014: EngineCompartment
+    4300016: Wing
+    4300018: Prop
+    4300020: ' WheelHub002'
+    4300022: Wheel002
+    4300024: Door001
+    4300026: BackWing002
+    4300028: Aileron001
+    4300030: Windows
+    4300032: EngineCompartment001
+    4300034: RearRudder
+    4300036: WingRudder
+    4300038: Wing001
+    4300040: WingRudder001
+    4300042: seat
+    4300044: seat001
+    4300046: Gear
+    4300048: Steer
+    4300050: Chassis
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

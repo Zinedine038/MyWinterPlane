@@ -12,6 +12,16 @@ public class AirplaneManager : MonoBehaviour {
 	void Start () {
         GetComponent<AudioSource>().mute = !engineOn;
         GetComponent<RearWheelDrive>().enabled = engineOn;
+
+
+        engineOn = !engineOn;
+        GetComponent<AudioSource>().mute = !engineOn;
+        GetComponent<RearWheelDrive>().enabled = engineOn;
+        if (!engineOn)
+        {
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().velocity = transform.forward * thrust / 2;
+        }
     }
 
     // Update is called once per frame
