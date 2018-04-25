@@ -13,11 +13,15 @@ public class JobGiver : MonoBehaviour {
         anim=GetComponent<Animator>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(mySpot.complete)
         {
             ReadyForTurnIn();
+        }
+        else
+        {
+            GoBackToIdle();
         }
     }
 
@@ -27,9 +31,20 @@ public class JobGiver : MonoBehaviour {
         ready=true;
     }
 
+    public void GoBackToIdle()
+    {
+        anim.SetTrigger("Idle");
+        ready = false;
+    }
+
     public void TurnIn()
     {
         PlayerManager.instance.money+=reward;
 
+    }
+
+    public void GiveMoney()
+    {
+        PlayerManager.instance.money+=reward;
     }
 }
