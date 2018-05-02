@@ -6,6 +6,8 @@ public class JobGiver : MonoBehaviour {
     public JobTurnInSpot mySpot;
     public Animator anim;
     public int reward;
+    public Transform moneyRewardSpot;
+    public GameObject moneyPrefab;
     bool ready;
 
     private void Start()
@@ -15,11 +17,11 @@ public class JobGiver : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if(mySpot.complete)
+        if(mySpot.complete && !ready)
         {
             ReadyForTurnIn();
         }
-        else
+        else if(!mySpot.complete && ready)
         {
             GoBackToIdle();
         }
@@ -28,6 +30,11 @@ public class JobGiver : MonoBehaviour {
     public void ReadyForTurnIn()
     {
         anim.SetTrigger("GiveMoney");
+        GameObject prefab = Instantiate(moneyPrefab);
+        prefab.transform.SetParent(moneyRewardSpot);
+        prefab.transform.localPosition=Vector3.zero;
+        prefab.transform.localEulerAngles=Vector3.zero;
+        prefab.GetComponentInChildren<Money>().amount=reward;
         ready=true;
     }
 
@@ -35,16 +42,5 @@ public class JobGiver : MonoBehaviour {
     {
         anim.SetTrigger("Idle");
         ready = false;
-    }
-
-    public void TurnIn()
-    {
-        PlayerManager.instance.money+=reward;
-
-    }
-
-    public void GiveMoney()
-    {
-        PlayerManager.instance.money+=reward;
     }
 }

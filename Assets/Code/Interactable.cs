@@ -20,6 +20,7 @@ public class Interactable : MonoBehaviour
             if(other.gameObject.GetComponent<JobTurnInSpot>()!=null)
             {
                 other.gameObject.GetComponent<JobTurnInSpot>().AddObject(name);
+                other.gameObject.GetComponent<JobTurnInSpot>().goList.Add(this.gameObject);
             }
         }
     }
@@ -31,6 +32,7 @@ public class Interactable : MonoBehaviour
             if (other.gameObject.GetComponent<JobTurnInSpot>() != null)
             {
                 other.gameObject.GetComponent<JobTurnInSpot>().RemoveObject(name);
+                other.gameObject.GetComponent<JobTurnInSpot>().goList.Remove(this.gameObject);
             }
         }
     }
