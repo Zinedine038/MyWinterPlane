@@ -1,0 +1,368 @@
+fileFormatVersion: 2
+guid: 6b3b274c644a49c409ad057d486badbf
+timeCreated: 1523362002
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: ' WheelHub'
+    100002: ' WheelHub001'
+    100004: ' WheelHub002'
+    100006: Aileron
+    100008: Aileron001
+    100010: BackAileronBone
+    100012: BackAileronBone001
+    100014: BackWing001
+    100016: BackWing002
+    100018: Chassis
+    100020: ChassisBone
+    100022: DashBoard2
+    100024: Dial
+    100026: Dial001
+    100028: Dial002
+    100030: Dial003
+    100032: Dial004
+    100034: Dial005
+    100036: Dial006
+    100038: Dial007
+    100040: Door
+    100042: Door001
+    100044: EngineCompartment
+    100046: EngineCompartment002
+    100048: EngineCompartmentBone
+    100050: EngineCompartmentBone001
+    100052: FrontAileronBone
+    100054: FrontAileronBone001
+    100056: Gear
+    100058: LoweDoorBone
+    100060: LoweDoorBone001
+    100062: //RootNode
+    100064: Prop
+    100066: PropBone
+    100068: RearRudder
+    100070: Root0.0.0
+    100072: seat
+    100074: seat001
+    100076: Steer
+    100078: SteeringWheelBone
+    100080: TailAileronBone
+    100082: UpperDoorBone
+    100084: UpperDoorBone001
+    100086: Wheel001
+    100088: Wheel002
+    100090: Wheel003
+    100092: WindowDoorLeft
+    100094: WindowDoorLeft001
+    100096: WindowDoorLeft002
+    100098: Windows
+    100100: Wing
+    100102: Wing002
+    100104: WingRudder
+    100106: WingRudder001
+    400000: ' WheelHub'
+    400002: ' WheelHub001'
+    400004: ' WheelHub002'
+    400006: Aileron
+    400008: Aileron001
+    400010: BackAileronBone
+    400012: BackAileronBone001
+    400014: BackWing001
+    400016: BackWing002
+    400018: Chassis
+    400020: ChassisBone
+    400022: DashBoard2
+    400024: Dial
+    400026: Dial001
+    400028: Dial002
+    400030: Dial003
+    400032: Dial004
+    400034: Dial005
+    400036: Dial006
+    400038: Dial007
+    400040: Door
+    400042: Door001
+    400044: EngineCompartment
+    400046: EngineCompartment002
+    400048: EngineCompartmentBone
+    400050: EngineCompartmentBone001
+    400052: FrontAileronBone
+    400054: FrontAileronBone001
+    400056: Gear
+    400058: LoweDoorBone
+    400060: LoweDoorBone001
+    400062: //RootNode
+    400064: Prop
+    400066: PropBone
+    400068: RearRudder
+    400070: Root0.0.0
+    400072: seat
+    400074: seat001
+    400076: Steer
+    400078: SteeringWheelBone
+    400080: TailAileronBone
+    400082: UpperDoorBone
+    400084: UpperDoorBone001
+    400086: Wheel001
+    400088: Wheel002
+    400090: Wheel003
+    400092: WindowDoorLeft
+    400094: WindowDoorLeft001
+    400096: WindowDoorLeft002
+    400098: Windows
+    400100: Wing
+    400102: Wing002
+    400104: WingRudder
+    400106: WingRudder001
+    2300000: Gear
+    2300002: WindowDoorLeft002
+    2300004: WingRudder
+    3300000: Gear
+    3300002: WindowDoorLeft002
+    3300004: WingRudder
+    4300000: Chassis
+    4300002: seat001
+    4300004: WindowDoorLeft002
+    4300006: Wing002
+    4300008: Dial003
+    4300010: Dial004
+    4300012: Dial
+    4300014: DashBoard2
+    4300016: Dial005
+    4300018: Dial006
+    4300020: Dial002
+    4300022: Dial007
+    4300024: Dial001
+    4300026: WindowDoorLeft
+    4300028: ' WheelHub001'
+    4300030: ' WheelHub'
+    4300032: Door001
+    4300034: EngineCompartment
+    4300036: BackWing002
+    4300038: WindowDoorLeft001
+    4300040: Windows
+    4300042: RearRudder
+    4300044: EngineCompartment002
+    4300046: WingRudder
+    4300048: Gear
+    4300050: Steer
+    4300052: BackWing001
+    4300054: Door
+    4300056: Prop
+    4300058: ' WheelHub002'
+    4300060: Wing
+    4300062: seat
+    4300064: Aileron
+    4300066: Wheel001
+    4300068: Wheel002
+    4300070: Wheel003
+    4300072: WingRudder001
+    4300074: Aileron001
+    9500000: //RootNode
+    13700000: ' WheelHub'
+    13700002: ' WheelHub001'
+    13700004: ' WheelHub002'
+    13700006: Aileron
+    13700008: Aileron001
+    13700010: BackWing001
+    13700012: BackWing002
+    13700014: Chassis
+    13700016: DashBoard2
+    13700018: Dial
+    13700020: Dial001
+    13700022: Dial002
+    13700024: Dial003
+    13700026: Dial004
+    13700028: Dial005
+    13700030: Dial006
+    13700032: Dial007
+    13700034: Door
+    13700036: Door001
+    13700038: EngineCompartment
+    13700040: EngineCompartment002
+    13700042: Prop
+    13700044: RearRudder
+    13700046: seat
+    13700048: seat001
+    13700050: Steer
+    13700052: Wheel001
+    13700054: Wheel002
+    13700056: Wheel003
+    13700058: WindowDoorLeft
+    13700060: WindowDoorLeft001
+    13700062: Windows
+    13700064: Wing
+    13700066: Wing002
+    13700068: WingRudder001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BackAilerion
+    second: {fileID: 2100000, guid: 9970d0467fa230b45bf12a482e6ff3c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BackWing
+    second: {fileID: 2100000, guid: 6657a729259c7c44dba7c9e71cea9ed3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chassis
+    second: {fileID: 2100000, guid: 7c7382e42d7b6a5449565a15534b14ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dashboard
+    second: {fileID: 2100000, guid: 708b651278008af4a9852ad949a1a5eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dial
+    second: {fileID: 2100000, guid: ae09b22769a6c8c478cfc3e4a1d95ee8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: ba6ffbc15ddb04c4b856c6126630e43f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EngineCompartement
+    second: {fileID: 2100000, guid: 10a2ef596c1c04b40a47053837da5b81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gear
+    second: {fileID: 2100000, guid: 38a03acfc16f8374c928b82b2af54ef5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Prop
+    second: {fileID: 2100000, guid: 73d7278247ecc46478e6cc041e8f8309, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RearRudder
+    second: {fileID: 2100000, guid: 2e7a21b2e2642e74daf71e12457b4ea0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Seat
+    second: {fileID: 2100000, guid: bdde9b10c24276b43a90a1375d070e02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steeringwheel
+    second: {fileID: 2100000, guid: ba341bcbf393e0e488b44707600d240a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheel
+    second: {fileID: 2100000, guid: 48f8959ed18b53b4591d1637c4b8013d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WheelHubFront
+    second: {fileID: 2100000, guid: 14d137ba8d0465d449839c3392b3420c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WheelHubSide
+    second: {fileID: 2100000, guid: cfe4538a6c1d6ff4382ff2d8de2fc0b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows
+    second: {fileID: 2100000, guid: 68cb70b8cef9eed42b06029665cbbda5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows2
+    second: {fileID: 2100000, guid: 84944782930584f43ba6abf9f24d5094, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wing
+    second: {fileID: 2100000, guid: beb318ab3537fdc48b66862ee57ab9d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WingRudder
+    second: {fileID: 2100000, guid: 56489f6bcbd0ab84c851279791bbb40c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
