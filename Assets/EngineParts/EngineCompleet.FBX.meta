@@ -1,0 +1,586 @@
+fileFormatVersion: 2
+guid: 283c90e7b41e80b42bd6221e8cd08444
+timeCreated: 1525769426
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Airfilter
+    100002: Boolie
+    100004: Camshaft
+    100006: Camshaft001
+    100008: Camshaft002
+    100010: Camshaft003
+    100012: Carterpan
+    100014: CilinderHead001
+    100016: CilinderHead002
+    100018: Crankshaft
+    100020: Crankshaftpulley
+    100022: Cylinder003
+    100024: Cylinder007
+    100026: Cylinder008
+    100028: Cylinder010
+    100030: Cylinder011
+    100032: Cylinder014
+    100034: Cylinder017
+    100036: Cylinder018
+    100038: Cylinder019
+    100040: Cylinder020
+    100042: Cylinder026
+    100044: Cylinder027
+    100046: Cylinder028
+    100048: Cylinder029
+    100050: Cylinder030
+    100052: Cylinder031
+    100054: Cylinder032
+    100056: Cylinder033
+    100058: Cylinder034
+    100060: Cylinder035
+    100062: Cylinder037
+    100064: Cylinder038
+    100066: Cylinder039
+    100068: Cylinder040
+    100070: Cylinder041
+    100072: Cylinder042
+    100074: Cylinder043
+    100076: Cylinder044
+    100078: Cylinder045
+    100080: Cylinder046
+    100082: Cylinder047
+    100084: Cylinder048
+    100086: Cylinder049
+    100088: Cylinder050
+    100090: Cylinder051
+    100092: Cylinder052
+    100094: Cylinder053
+    100096: Cylinder054
+    100098: Cylinder055
+    100100: Cylinder064
+    100102: Cylinder163
+    100104: Cylinder164
+    100106: Cylinder165
+    100108: Cylinder166
+    100110: Cylinder197
+    100112: Cylinder199
+    100114: Cylinder200
+    100116: Cylinder201
+    100118: Cylinder202
+    100120: Cylinder203
+    100122: Cylinder204
+    100124: Cylinder205
+    100126: Cylinder206
+    100128: Cylinder207
+    100130: Cylinder208
+    100132: Cylinder209
+    100134: Cylinder210
+    100136: Cylinder211
+    100138: Cylinder212
+    100140: Cylinder213
+    100142: Cylinder214
+    100144: Cylinder215
+    100146: Destrubiter
+    100148: Dynamo
+    100150: Engine
+    100152: //RootNode
+    100154: Fanbelt
+    100156: Fuelrails
+    100158: Fuelrails 1
+    100160: Fuelrails 2
+    100162: Fuelrails001
+    100164: Headcascet
+    100166: Headcascet001
+    100168: Intakemanifold
+    100170: Piston
+    100172: Piston 1
+    100174: Piston 2
+    100176: Piston 3
+    100178: Piston 4
+    100180: Piston 5
+    100182: Piston 6
+    100184: Piston 7
+    100186: Plane001
+    100188: Power cables
+    100190: Power cables 1
+    100192: Power cables 2
+    100194: Power cables 3
+    100196: Rockercover
+    100198: Rockercover001
+    100200: SparkPlug
+    100202: SparkPlug001
+    100204: SparkPlug002
+    100206: SparkPlug003
+    100208: SparkPlug004
+    100210: SparkPlug005
+    100212: SparkPlug006
+    100214: SparkPlug007
+    100216: Timingbelt
+    100218: Timingbelt001
+    100220: Timingcover
+    400000: Airfilter
+    400002: Boolie
+    400004: Camshaft
+    400006: Camshaft001
+    400008: Camshaft002
+    400010: Camshaft003
+    400012: Carterpan
+    400014: CilinderHead001
+    400016: CilinderHead002
+    400018: Crankshaft
+    400020: Crankshaftpulley
+    400022: Cylinder003
+    400024: Cylinder007
+    400026: Cylinder008
+    400028: Cylinder010
+    400030: Cylinder011
+    400032: Cylinder014
+    400034: Cylinder017
+    400036: Cylinder018
+    400038: Cylinder019
+    400040: Cylinder020
+    400042: Cylinder026
+    400044: Cylinder027
+    400046: Cylinder028
+    400048: Cylinder029
+    400050: Cylinder030
+    400052: Cylinder031
+    400054: Cylinder032
+    400056: Cylinder033
+    400058: Cylinder034
+    400060: Cylinder035
+    400062: Cylinder037
+    400064: Cylinder038
+    400066: Cylinder039
+    400068: Cylinder040
+    400070: Cylinder041
+    400072: Cylinder042
+    400074: Cylinder043
+    400076: Cylinder044
+    400078: Cylinder045
+    400080: Cylinder046
+    400082: Cylinder047
+    400084: Cylinder048
+    400086: Cylinder049
+    400088: Cylinder050
+    400090: Cylinder051
+    400092: Cylinder052
+    400094: Cylinder053
+    400096: Cylinder054
+    400098: Cylinder055
+    400100: Cylinder064
+    400102: Cylinder163
+    400104: Cylinder164
+    400106: Cylinder165
+    400108: Cylinder166
+    400110: Cylinder197
+    400112: Cylinder199
+    400114: Cylinder200
+    400116: Cylinder201
+    400118: Cylinder202
+    400120: Cylinder203
+    400122: Cylinder204
+    400124: Cylinder205
+    400126: Cylinder206
+    400128: Cylinder207
+    400130: Cylinder208
+    400132: Cylinder209
+    400134: Cylinder210
+    400136: Cylinder211
+    400138: Cylinder212
+    400140: Cylinder213
+    400142: Cylinder214
+    400144: Cylinder215
+    400146: Destrubiter
+    400148: Dynamo
+    400150: Engine
+    400152: //RootNode
+    400154: Fanbelt
+    400156: Fuelrails
+    400158: Fuelrails 1
+    400160: Fuelrails 2
+    400162: Fuelrails001
+    400164: Headcascet
+    400166: Headcascet001
+    400168: Intakemanifold
+    400170: Piston
+    400172: Piston 1
+    400174: Piston 2
+    400176: Piston 3
+    400178: Piston 4
+    400180: Piston 5
+    400182: Piston 6
+    400184: Piston 7
+    400186: Plane001
+    400188: Power cables
+    400190: Power cables 1
+    400192: Power cables 2
+    400194: Power cables 3
+    400196: Rockercover
+    400198: Rockercover001
+    400200: SparkPlug
+    400202: SparkPlug001
+    400204: SparkPlug002
+    400206: SparkPlug003
+    400208: SparkPlug004
+    400210: SparkPlug005
+    400212: SparkPlug006
+    400214: SparkPlug007
+    400216: Timingbelt
+    400218: Timingbelt001
+    400220: Timingcover
+    2300000: Airfilter
+    2300002: Boolie
+    2300004: Camshaft
+    2300006: Camshaft001
+    2300008: Camshaft002
+    2300010: Camshaft003
+    2300012: Carterpan
+    2300014: CilinderHead001
+    2300016: CilinderHead002
+    2300018: Crankshaft
+    2300020: Crankshaftpulley
+    2300022: Cylinder003
+    2300024: Cylinder007
+    2300026: Cylinder008
+    2300028: Cylinder010
+    2300030: Cylinder011
+    2300032: Cylinder014
+    2300034: Cylinder017
+    2300036: Cylinder018
+    2300038: Cylinder019
+    2300040: Cylinder020
+    2300042: Cylinder026
+    2300044: Cylinder027
+    2300046: Cylinder028
+    2300048: Cylinder029
+    2300050: Cylinder030
+    2300052: Cylinder031
+    2300054: Cylinder032
+    2300056: Cylinder033
+    2300058: Cylinder034
+    2300060: Cylinder035
+    2300062: Cylinder037
+    2300064: Cylinder038
+    2300066: Cylinder039
+    2300068: Cylinder040
+    2300070: Cylinder041
+    2300072: Cylinder042
+    2300074: Cylinder043
+    2300076: Cylinder044
+    2300078: Cylinder045
+    2300080: Cylinder046
+    2300082: Cylinder047
+    2300084: Cylinder048
+    2300086: Cylinder049
+    2300088: Cylinder050
+    2300090: Cylinder051
+    2300092: Cylinder052
+    2300094: Cylinder053
+    2300096: Cylinder054
+    2300098: Cylinder055
+    2300100: Cylinder064
+    2300102: Cylinder163
+    2300104: Cylinder164
+    2300106: Cylinder165
+    2300108: Cylinder166
+    2300110: Cylinder197
+    2300112: Cylinder199
+    2300114: Cylinder200
+    2300116: Cylinder201
+    2300118: Cylinder202
+    2300120: Cylinder203
+    2300122: Cylinder204
+    2300124: Cylinder205
+    2300126: Cylinder206
+    2300128: Cylinder207
+    2300130: Cylinder208
+    2300132: Cylinder209
+    2300134: Cylinder210
+    2300136: Cylinder211
+    2300138: Cylinder212
+    2300140: Cylinder213
+    2300142: Cylinder214
+    2300144: Cylinder215
+    2300146: Destrubiter
+    2300148: Dynamo
+    2300150: Engine
+    2300152: Fanbelt
+    2300154: Fuelrails
+    2300156: Fuelrails 1
+    2300158: Fuelrails 2
+    2300160: Fuelrails001
+    2300162: Headcascet
+    2300164: Headcascet001
+    2300166: Intakemanifold
+    2300168: Piston
+    2300170: Piston 1
+    2300172: Piston 2
+    2300174: Piston 3
+    2300176: Piston 4
+    2300178: Piston 5
+    2300180: Piston 6
+    2300182: Piston 7
+    2300184: Plane001
+    2300186: Power cables
+    2300188: Power cables 1
+    2300190: Power cables 2
+    2300192: Power cables 3
+    2300194: Rockercover
+    2300196: Rockercover001
+    2300198: SparkPlug
+    2300200: SparkPlug001
+    2300202: SparkPlug002
+    2300204: SparkPlug003
+    2300206: SparkPlug004
+    2300208: SparkPlug005
+    2300210: SparkPlug006
+    2300212: SparkPlug007
+    2300214: Timingbelt
+    2300216: Timingbelt001
+    2300218: Timingcover
+    3300000: Airfilter
+    3300002: Boolie
+    3300004: Camshaft
+    3300006: Camshaft001
+    3300008: Camshaft002
+    3300010: Camshaft003
+    3300012: Carterpan
+    3300014: CilinderHead001
+    3300016: CilinderHead002
+    3300018: Crankshaft
+    3300020: Crankshaftpulley
+    3300022: Cylinder003
+    3300024: Cylinder007
+    3300026: Cylinder008
+    3300028: Cylinder010
+    3300030: Cylinder011
+    3300032: Cylinder014
+    3300034: Cylinder017
+    3300036: Cylinder018
+    3300038: Cylinder019
+    3300040: Cylinder020
+    3300042: Cylinder026
+    3300044: Cylinder027
+    3300046: Cylinder028
+    3300048: Cylinder029
+    3300050: Cylinder030
+    3300052: Cylinder031
+    3300054: Cylinder032
+    3300056: Cylinder033
+    3300058: Cylinder034
+    3300060: Cylinder035
+    3300062: Cylinder037
+    3300064: Cylinder038
+    3300066: Cylinder039
+    3300068: Cylinder040
+    3300070: Cylinder041
+    3300072: Cylinder042
+    3300074: Cylinder043
+    3300076: Cylinder044
+    3300078: Cylinder045
+    3300080: Cylinder046
+    3300082: Cylinder047
+    3300084: Cylinder048
+    3300086: Cylinder049
+    3300088: Cylinder050
+    3300090: Cylinder051
+    3300092: Cylinder052
+    3300094: Cylinder053
+    3300096: Cylinder054
+    3300098: Cylinder055
+    3300100: Cylinder064
+    3300102: Cylinder163
+    3300104: Cylinder164
+    3300106: Cylinder165
+    3300108: Cylinder166
+    3300110: Cylinder197
+    3300112: Cylinder199
+    3300114: Cylinder200
+    3300116: Cylinder201
+    3300118: Cylinder202
+    3300120: Cylinder203
+    3300122: Cylinder204
+    3300124: Cylinder205
+    3300126: Cylinder206
+    3300128: Cylinder207
+    3300130: Cylinder208
+    3300132: Cylinder209
+    3300134: Cylinder210
+    3300136: Cylinder211
+    3300138: Cylinder212
+    3300140: Cylinder213
+    3300142: Cylinder214
+    3300144: Cylinder215
+    3300146: Destrubiter
+    3300148: Dynamo
+    3300150: Engine
+    3300152: Fanbelt
+    3300154: Fuelrails
+    3300156: Fuelrails 1
+    3300158: Fuelrails 2
+    3300160: Fuelrails001
+    3300162: Headcascet
+    3300164: Headcascet001
+    3300166: Intakemanifold
+    3300168: Piston
+    3300170: Piston 1
+    3300172: Piston 2
+    3300174: Piston 3
+    3300176: Piston 4
+    3300178: Piston 5
+    3300180: Piston 6
+    3300182: Piston 7
+    3300184: Plane001
+    3300186: Power cables
+    3300188: Power cables 1
+    3300190: Power cables 2
+    3300192: Power cables 3
+    3300194: Rockercover
+    3300196: Rockercover001
+    3300198: SparkPlug
+    3300200: SparkPlug001
+    3300202: SparkPlug002
+    3300204: SparkPlug003
+    3300206: SparkPlug004
+    3300208: SparkPlug005
+    3300210: SparkPlug006
+    3300212: SparkPlug007
+    3300214: Timingbelt
+    3300216: Timingbelt001
+    3300218: Timingcover
+    4300000: Power cables
+    4300002: Camshaft
+    4300004: SparkPlug
+    4300006: Cylinder166
+    4300008: Cylinder041
+    4300010: Cylinder040
+    4300012: Piston
+    4300014: Piston
+    4300016: Cylinder046
+    4300018: Cylinder037
+    4300020: Cylinder039
+    4300022: Cylinder042
+    4300024: Cylinder205
+    4300026: Fuelrails
+    4300028: Cylinder203
+    4300030: Cylinder197
+    4300032: Cylinder207
+    4300034: Cylinder202
+    4300036: Headcascet
+    4300038: Cylinder206
+    4300040: Cylinder204
+    4300042: Cylinder201
+    4300044: Intakemanifold
+    4300046: Boolie
+    4300048: Cylinder199
+    4300050: Crankshaft
+    4300052: Fuelrails
+    4300054: Cylinder200
+    4300056: Crankshaftpulley
+    4300058: Fanbelt
+    4300060: Airfilter
+    4300062: Dynamo
+    4300064: Carterpan
+    4300066: Timingbelt
+    4300068: Timingcover
+    4300070: Destrubiter
+    4300072: Power cables
+    4300074: Rockercover
+    4300076: Power cables
+    4300078: Cylinder211
+    4300080: Cylinder210
+    4300082: Cylinder208
+    4300084: Engine
+    4300086: CilinderHead001
+    4300088: Power cables
+    4300090: Fuelrails001
+    4300092: Headcascet001
+    4300094: SparkPlug001
+    4300096: SparkPlug002
+    4300098: Timingbelt001
+    4300100: SparkPlug003
+    4300102: Camshaft001
+    4300104: SparkPlug004
+    4300106: SparkPlug007
+    4300108: Rockercover001
+    4300110: Cylinder212
+    4300112: SparkPlug006
+    4300114: CilinderHead002
+    4300116: Plane001
+    4300118: SparkPlug005
+    4300120: Camshaft002
+    4300122: Camshaft003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.005
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

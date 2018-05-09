@@ -7,6 +7,9 @@ TagManager:
   - VehicleEnter
   - JobTurnInSpot
   - Money
+  - CrouchZone
+  - Airplane
+  - PlaneEnter
   layers:
   - Default
   - TransparentFX

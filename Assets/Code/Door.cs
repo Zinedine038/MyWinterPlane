@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	    if(Input.GetButton("Jump"))
-        {
-            GetComponent<Rigidbody>().AddForce(100,100,100);
-        }
-	}
+public class Door : MonoBehaviour {
+    [HideInInspector]
+	public bool openClosed = false;
+    public Animator anim;
+    public string doorName;
+    public void Switch()
+    {
+        openClosed=!openClosed;
+        print(openClosed);
+        Animate();
+    }
+
+    void Animate()
+    {
+        anim.SetBool(doorName,openClosed);
+    }
 }

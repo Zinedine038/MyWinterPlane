@@ -7,15 +7,20 @@ public class AirplaneManager : MonoBehaviour {
     public float thrust;
     public GameObject propellor;
     public bool engineOn;
-    public GameObject rearLift, leftWingThing, rightWingThing;  
+    public bool ignitionPressed;
+    public AudioSource source;
+    public AudioSource propellorSource;
+    public AudioClip crankstart,crankloop,crankend;
+    public bool mayStart;
 	// Use this for initialization
 	void Start () {
-        GetComponent<AudioSource>().mute = !engineOn;
-        GetComponent<RearWheelDrive>().enabled = engineOn;
+        source=GetComponent<AudioSource>();
+        //GetComponent<AudioSource>().mute = !engineOn;
+        //GetComponent<RearWheelDrive>().enabled = engineOn;
 
 
-        engineOn = !engineOn;
-        GetComponent<AudioSource>().mute = !engineOn;
+        //engineOn = !engineOn;
+        //GetComponent<AudioSource>().mute = !engineOn;
         GetComponent<RearWheelDrive>().enabled = engineOn;
         if (!engineOn)
         {
@@ -41,22 +46,10 @@ public class AirplaneManager : MonoBehaviour {
         {
             Brake();
         }
+        ignitionPressed = Input.GetKey("joystick button 1");
         Ignition();
         Propell();
         Throttle();
-        rearLift.transform.localEulerAngles = new Vector3(0,0,Input.GetAxis("Vertical")*40);
-        if(Input.GetAxis("Horizontal")<0)
-        {
-            print("lol");
-            leftWingThing.transform.localEulerAngles = new Vector3(0, 0, -Input.GetAxis("Horizontal") * 40);
-            rightWingThing.transform.localEulerAngles = new Vector3(0, 0, Input.GetAxis("Horizontal") * 40);
-        }
-        else if(Input.GetAxis("Horizontal")>0)
-        {
-            print("lol2");
-            leftWingThing.transform.localEulerAngles = new Vector3(0, 0, -Input.GetAxis("Horizontal") * 40);
-            rightWingThing.transform.localEulerAngles = new Vector3(0, 0, Input.GetAxis("Horizontal") * 40);
-        }
 
     }
 
@@ -69,23 +62,58 @@ public class AirplaneManager : MonoBehaviour {
     {
         if (Input.GetKeyDown("joystick button 1"))
         {
-            engineOn = !engineOn;
-            GetComponent<AudioSource>().mute = !engineOn;
-            GetComponent<RearWheelDrive>().enabled = engineOn;
-            if(!engineOn)
-            {
-                GetComponent<Rigidbody>().useGravity=true;
-                GetComponent<Rigidbody>().velocity=transform.forward*thrust/2;
-            }
+            source.mute=false;
+
+            StartCoroutine("IgnitionLoop");
+            StartCoroutine("CheckIgnition");
         }
+    }
+
+    IEnumerator CheckIgnition()
+    {
+        while(ignitionPressed)
+        {
+            yield return null;
+        }
+        StopCoroutine("IgnitionLoop");
+    }
+
+    IEnumerator IgnitionLoop()
+    {
+        source.PlayOneShot(crankstart);
+        yield return new WaitForSeconds(crankstart.length);
+        int crank =0;
+        while(crank!=5)
+        {
+            source.PlayOneShot(crankloop);
+            yield return new WaitForSeconds(crankloop.length);
+            crank++;
+        }
+        while(mayStart==false)
+        {
+            source.PlayOneShot(crankloop);
+            yield return new WaitForSeconds(crankloop.length);
+        }
+        source.PlayOneShot(crankend);
+        propellorSource.volume=2;
+        engineOn = !engineOn;
+        GetComponent<AudioSource>().mute = !engineOn;
+        GetComponent<RearWheelDrive>().enabled = engineOn;
+        if (!engineOn)
+        {
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().velocity = transform.forward * thrust / 2;
+        }
+        propellorSource.mute = !engineOn;
+
     }
 
     public void Propell()
     {
         if (engineOn)
         {
-            GetComponent<AudioSource>().pitch = 1 + (thrust / 50f);
-            propellor.transform.Rotate(180 * thrust * Time.deltaTime / 6.66f + 200, 0, 0);
+            propellorSource.pitch = 1 + (thrust / 50f);
+            propellor.transform.Rotate(0,0,180 * thrust * Time.deltaTime / 6.66f + 200);
         }
         else
         {
