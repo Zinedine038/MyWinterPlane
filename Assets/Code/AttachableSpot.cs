@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AttachableSpot : MonoBehaviour {
     public string attachablePartName;
-
+    [HideInInspector]
+    public bool filled;
     private void Awake()
     {
         GetComponent<Collider>().isTrigger=true;
@@ -12,7 +13,7 @@ public class AttachableSpot : MonoBehaviour {
 
     public bool CanAttach(string part)
     {
-        if(part==attachablePartName)
+        if(part==attachablePartName && !filled)
         {
             return true;
         }

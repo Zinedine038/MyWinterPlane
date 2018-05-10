@@ -25,6 +25,11 @@ public class Use : MonoBehaviour {
                     print("wow");
                     hit.collider.transform.GetComponent<Door>().Switch();
                 }
+                if (hit.collider.transform.GetComponent<PlaneEnter>())
+                {
+                    print("wow");
+                    hit.collider.transform.GetComponent<PlaneEnter>().Enter();
+                }
 
             }
         }

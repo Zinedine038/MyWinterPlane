@@ -18,6 +18,7 @@ public class AirplanePart : Interactable
     public bool attached = false;
     public bool beingcarried;
 
+    public float horsePowerIncrease;
 
     private void Update()
     {
@@ -93,9 +94,10 @@ public class AirplanePart : Interactable
         GetComponent<PickupCarry_Object>().pickupable=false;
         GetComponent<Rigidbody>().constraints=RigidbodyConstraints.FreezeAll;
         transform.SetParent(lastObjectPassed.transform);
+        lastObjectPassed.GetComponent<AttachableSpot>().filled=true;
         lastObjectPassed = null;
         CheckMark.instance.Set(false);
-        EngineManager.instance.AddPart(partName);
+        EngineManager.instance.AddPart(partName,horsePowerIncrease);
         StartCoroutine("FixPosition");
     }
 
@@ -119,9 +121,10 @@ public class AirplanePart : Interactable
         attached = false;
         GetComponent<PickupCarry_Object>().pickupable = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        transform.parent.GetComponent<AttachableSpot>().filled = true;
         transform.parent=null;
         GetComponent<Collider>().enabled = true;
-        EngineManager.instance.RemovePart(partName);
+        EngineManager.instance.RemovePart(partName, horsePowerIncrease);
     }
 
 

@@ -160,9 +160,9 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 
 	// Min / Max Sound Pitches and Volumes.
 	[Range(.25f, 1f)]public float minEngineSoundPitch = .75f;
-	[Range(1.25f, 2f)]public float maxEngineSoundPitch = 1.75f;
+	[Range(1.25f, 4f)]public float maxEngineSoundPitch = 1.75f;
 	[Range(0f, 1f)]public float minEngineSoundVolume = .05f;
-	[Range(0f, 1f)]public float maxEngineSoundVolume = .85f;
+	[Range(0f, 2f)]public float maxEngineSoundVolume = .85f;
 
 	// Main Gameobjects for keep the Hierarchy clean and organized.
 	private GameObject allContactParticles;

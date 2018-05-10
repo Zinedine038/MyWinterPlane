@@ -16,7 +16,7 @@ public class Door : MonoBehaviour {
     }
 
     void Animate()
-    {
+    { 
         anim.SetBool(doorName,openClosed);
     }
 }

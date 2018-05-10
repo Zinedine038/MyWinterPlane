@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlaneStatus
+{
+    Starts,
+    Cranks,
+    TotalLoss
+}
+
 public class AirplaneManager : MonoBehaviour {
     public float maxThrust;
     public float thrust;
@@ -12,6 +19,7 @@ public class AirplaneManager : MonoBehaviour {
     public AudioSource propellorSource;
     public AudioClip crankstart,crankloop,crankend;
     public bool mayStart;
+    public bool mayCrank;
 	// Use this for initialization
 	void Start () {
         source=GetComponent<AudioSource>();
@@ -62,17 +70,63 @@ public class AirplaneManager : MonoBehaviour {
     {
         if (Input.GetKeyDown("joystick button 1"))
         {
-            source.mute=false;
+            if(!engineOn)
+            {
+                switch(EngineDiagnose())
+                {
+                    case PlaneStatus.Cranks:
+                        mayStart=false;
+                        mayCrank=true;
+                        break;
+                    case PlaneStatus.Starts:
+                        mayCrank=true;
+                        mayStart = true;
+                        break;
+                    case PlaneStatus.TotalLoss:
+                        mayCrank = false;
+                        break;
 
-            StartCoroutine("IgnitionLoop");
-            StartCoroutine("CheckIgnition");
+                }
+                source.mute = false;
+                if(mayCrank)
+                {
+                    StartCoroutine("IgnitionLoop");
+                    StartCoroutine("CheckIgnition");
+                }
+                StopCoroutine("KillEngine");
+                
+            }
+            else
+            {
+                TurnOffEngine();
+            }
+
         }
+    }
+
+    public void TurnOffEngine()
+    {
+        engineOn = !engineOn;
+        GetComponent<AudioSource>().mute = !engineOn;
+        GetComponent<RearWheelDrive>().enabled = engineOn;
+        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Rigidbody>().velocity = transform.forward * thrust / 2;
+        StartCoroutine("KillEngine");
     }
 
     IEnumerator CheckIgnition()
     {
-        while(ignitionPressed)
+        float speed = 101;
+        while (ignitionPressed)
         {
+            if(!engineOn)
+            {
+                if(speed<1500)
+                {
+                    speed += 1000 * Time.deltaTime; 
+                }
+                propellor.transform.Rotate(0, 0, speed * Time.deltaTime);
+            }
             yield return null;
         }
         StopCoroutine("IgnitionLoop");
@@ -83,7 +137,7 @@ public class AirplaneManager : MonoBehaviour {
         source.PlayOneShot(crankstart);
         yield return new WaitForSeconds(crankstart.length);
         int crank =0;
-        while(crank!=5)
+        while(crank!=2)
         {
             source.PlayOneShot(crankloop);
             yield return new WaitForSeconds(crankloop.length);
@@ -95,6 +149,7 @@ public class AirplaneManager : MonoBehaviour {
             yield return new WaitForSeconds(crankloop.length);
         }
         source.PlayOneShot(crankend);
+        yield return new WaitForSeconds(2.25f);
         propellorSource.volume=2;
         engineOn = !engineOn;
         GetComponent<AudioSource>().mute = !engineOn;
@@ -104,8 +159,24 @@ public class AirplaneManager : MonoBehaviour {
             GetComponent<Rigidbody>().useGravity = true;
             GetComponent<Rigidbody>().velocity = transform.forward * thrust / 2;
         }
+        thrust = 0;
         propellorSource.mute = !engineOn;
+        propellorSource.pitch=1;
+    }
 
+    IEnumerator KillEngine()
+    {
+        float tempThrust = thrust;
+        float tempThrustDecrease = thrust;
+        float curPitch = propellorSource.pitch;
+        while(propellorSource.pitch>0)
+        {
+            tempThrust-=tempThrustDecrease*Time.deltaTime;
+            propellorSource.pitch-=curPitch*Time.deltaTime;
+            propellor.transform.Rotate(0, 0, 180 * tempThrust * Time.deltaTime / 6.66f + 200);
+            yield return null;
+        }
+        propellorSource.mute = !engineOn;
     }
 
     public void Propell()
@@ -113,7 +184,7 @@ public class AirplaneManager : MonoBehaviour {
         if (engineOn)
         {
             propellorSource.pitch = 1 + (thrust / 50f);
-            propellor.transform.Rotate(0,0,180 * thrust * Time.deltaTime / 6.66f + 200);
+            propellor.transform.Rotate(0, 0, 180 * thrust * Time.deltaTime / 6.66f + 200);
         }
         else
         {
@@ -125,7 +196,6 @@ public class AirplaneManager : MonoBehaviour {
                     thrust = 0;
                 }
             }
-            propellor.transform.Rotate(180 * thrust * Time.deltaTime / 6.66f, 0, 0);
         }
         transform.Rotate(Input.GetAxis("Vertical") * 0.75f, Input.GetAxis("Horizontal") * 0.33f, -Input.GetAxis("Horizontal") * 1F);
         transform.position+=transform.forward*Time.deltaTime*thrust;
@@ -157,5 +227,62 @@ public class AirplaneManager : MonoBehaviour {
             }
         }
 
+    }
+
+    public PlaneStatus EngineDiagnose()
+    {
+        maxThrust=0;
+        for (int i = 1; i <= 8; i++)
+        {
+            if (EngineContains("Piston" + i))
+            {
+                maxThrust += 6.25f;
+            }
+        }
+        foreach (string part in EngineManager.instance.attachedParts)
+        {
+            if (part == "Sparkplug")
+            {
+                maxThrust += 6.25f;
+            }
+        }
+        if (!EngineContains("Crankshaft"))
+        {
+            print("Missing Crankshaft");
+            return PlaneStatus.TotalLoss;
+        }
+        if (!EngineContains("TimingBelt"))
+        {
+            print("Missing TimingBelt");
+            return PlaneStatus.TotalLoss;
+        }
+        if (!EngineContains("CylinderHead"))
+        {
+            print("Missing CylinderHead");
+            return PlaneStatus.TotalLoss;
+        }
+        if (!EngineContains("Electronics1-2") || !EngineContains("Electronics2-2"))
+        {
+            print("Missing Electronics1");
+            return PlaneStatus.TotalLoss;
+        }
+        if (!EngineContains("FuelRail"))
+        {
+            print("Missing FuelRail");
+            return PlaneStatus.Cranks;
+        }
+        if (!EngineContains("IntakeManifold"))
+        {
+            print("Missing IntakeManifold");
+            return PlaneStatus.Cranks;
+        }
+
+        return PlaneStatus.Starts;
+
+    }
+
+    bool EngineContains(string part)
+    {
+        return EngineManager.instance.attachedParts.Contains(part);
     }
 }
