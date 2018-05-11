@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.Utility;
 
-public class PlaneExit : MonoBehaviour {
+public class PlaneExit : MonoBehaviour
+{
 
     public FirstPersonController fps;
     public CharacterController cc;
@@ -13,28 +14,33 @@ public class PlaneExit : MonoBehaviour {
     public Transform placementPlayer;
     public AirplaneManager apm;
 
-    void Update () {
-		if(Input.GetButtonDown("Use"))
+    void Update()
+    {
+        if (Input.GetButtonDown("Use"))
         {
             StartCoroutine("ExitPlane");
         }
-	}
+    }
 
     IEnumerator ExitPlane()
     {
-        if(apm.engineOn)
+        if (AirplaneManager.instance.engineSpot.filled)
         {
-            apm.TurnOffEngine();
-            yield return new WaitForSeconds(2f);
+            AirplaneManager.instance.engineSpot.transform.GetChild(0).gameObject.SetActive(true);
+            if (apm.engineOn)
+            {
+                apm.TurnOffEngine();
+                yield return new WaitForSeconds(2f);
+            }
         }
-        cc.enabled = true;
-        fps.enabled = true;
         fps.transform.position = placementPlayer.position;
         fps.transform.eulerAngles = placementPlayer.eulerAngles;
-        fps.transform.SetParent(placementPlayer);
+        fps.transform.SetParent(null);
+        cc.enabled = true;
+        fps.enabled = true;
         eyes.transform.localEulerAngles = new Vector3(0, 0, 0);
         apm.enabled = false;
         mouseLook.enabled = false;
-        this.enabled=false;
+        this.enabled = false;
     }
 }

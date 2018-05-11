@@ -90,7 +90,7 @@ public class PickupCarry_Camera : MonoBehaviour
                     {
                         GameObject current = currentObject;
                         DropCurrentObject();
-                        current.GetComponent<AirplanePart>().Attach();
+                        current.GetComponent<AirplanePart>().StartCoroutine("Attach");
                         current.GetComponent<AirplanePart>().beingcarried = false;
                     }
                     else
@@ -171,7 +171,6 @@ public class PickupCarry_Camera : MonoBehaviour
         {
             float yRot = currentObject.transform.rotation.eulerAngles.y;
             float direction = Mathf.RoundToInt(yRot / 90.0f) * 90.0f;
-            //currentObject.transform.rotation = Quaternion.Euler(0, direction, 0);
             currentObject.GetComponent<Rigidbody>().useGravity = false;
         }
 

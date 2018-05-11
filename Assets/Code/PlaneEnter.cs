@@ -14,14 +14,25 @@ public class PlaneEnter : MonoBehaviour {
     public AirplaneManager apm;
     public void Enter()
     {
-        pe.enabled=true;
-        cc.enabled=false;
-        fps.enabled=false;
-        fps.transform.position=placementPlayer.position;
-        fps.transform.eulerAngles=placementPlayer.eulerAngles;
+        StartCoroutine("EnterPlane");
+    }
+
+    IEnumerator EnterPlane()
+    {
+
+        cc.enabled = false;
+        fps.enabled = false;
+        fps.transform.position = placementPlayer.position;
+        fps.transform.eulerAngles = placementPlayer.eulerAngles;
         fps.transform.SetParent(placementPlayer);
-        eyes.transform.localEulerAngles=new Vector3(0,0,0);
-        apm.enabled=true;
-        mouseLook.enabled=true;
+        eyes.transform.localEulerAngles = new Vector3(0, 0, 0);
+        apm.enabled = true;
+        mouseLook.enabled = true;
+        if (AirplaneManager.instance.engineSpot.filled)
+        {
+            AirplaneManager.instance.engineSpot.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        yield return new WaitForSeconds(2f);
+        pe.enabled = true;
     }
 }

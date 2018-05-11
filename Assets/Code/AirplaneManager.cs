@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum PlaneStatus
 {
@@ -10,6 +11,7 @@ public enum PlaneStatus
 }
 
 public class AirplaneManager : MonoBehaviour {
+    public static AirplaneManager instance;
     public float maxThrust;
     public float thrust;
     public GameObject propellor;
@@ -17,18 +19,28 @@ public class AirplaneManager : MonoBehaviour {
     public bool ignitionPressed;
     public AudioSource source;
     public AudioSource propellorSource;
-    public AudioClip crankstart,crankloop,crankend;
+    public AudioClip crankstart,crankloop,crankend, key;
     public bool mayStart;
     public bool mayCrank;
-	// Use this for initialization
-	void Start () {
+
+    [Header("Dashboard")]
+    public Image checkEngineLight;
+    public Image oilPressureLight;
+    public Image batteryLight;
+    public Image fuelLight;
+    public Image waterTemperatureLight;
+
+    public AttachableSpot engineSpot;
+    private float engineTemperature;
+    // Use this for initialization
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    void Start () {
         source=GetComponent<AudioSource>();
-        //GetComponent<AudioSource>().mute = !engineOn;
-        //GetComponent<RearWheelDrive>().enabled = engineOn;
-
-
-        //engineOn = !engineOn;
-        //GetComponent<AudioSource>().mute = !engineOn;
         GetComponent<RearWheelDrive>().enabled = engineOn;
         if (!engineOn)
         {
@@ -70,9 +82,13 @@ public class AirplaneManager : MonoBehaviour {
     {
         if (Input.GetKeyDown("joystick button 1"))
         {
+            source.PlayOneShot(key);
             if(!engineOn)
             {
-                switch(EngineDiagnose())
+                checkEngineLight.enabled = true;
+                batteryLight.enabled = true;
+                oilPressureLight.enabled = true;
+                switch (EngineDiagnose())
                 {
                     case PlaneStatus.Cranks:
                         mayStart=false;
@@ -102,12 +118,22 @@ public class AirplaneManager : MonoBehaviour {
             }
 
         }
+        if (Input.GetKeyUp("joystick button 1"))
+        {
+            if(!engineSpot.filled)
+            {
+                checkEngineLight.enabled = false;
+                batteryLight.enabled = false;
+                oilPressureLight.enabled = false;
+            }
+            source.Stop();
+            source.PlayOneShot(key);
+        }
     }
 
     public void TurnOffEngine()
     {
         engineOn = !engineOn;
-        GetComponent<AudioSource>().mute = !engineOn;
         GetComponent<RearWheelDrive>().enabled = engineOn;
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().velocity = transform.forward * thrust / 2;
@@ -130,10 +156,26 @@ public class AirplaneManager : MonoBehaviour {
             yield return null;
         }
         StopCoroutine("IgnitionLoop");
+        if(engineOn)
+        {
+            if (EngineContains("Dynamo") && EngineContains("Fanbelt"))
+            {
+                batteryLight.enabled = false;
+            }
+            yield return new WaitForSeconds(0.5f);
+            if (EngineContains("Carterpan"))
+            {
+                oilPressureLight.enabled = false;
+            }
+            yield return new WaitForSeconds(0.25f);
+            checkEngineLight.enabled = false;
+        }
+
     }
 
     IEnumerator IgnitionLoop()
     {
+
         source.PlayOneShot(crankstart);
         yield return new WaitForSeconds(crankstart.length);
         int crank =0;
@@ -152,7 +194,6 @@ public class AirplaneManager : MonoBehaviour {
         yield return new WaitForSeconds(2.25f);
         propellorSource.volume=2;
         engineOn = !engineOn;
-        GetComponent<AudioSource>().mute = !engineOn;
         GetComponent<RearWheelDrive>().enabled = engineOn;
         if (!engineOn)
         {
@@ -231,6 +272,10 @@ public class AirplaneManager : MonoBehaviour {
 
     public PlaneStatus EngineDiagnose()
     {
+        if(!engineSpot.filled)
+        {
+            return PlaneStatus.TotalLoss;
+        }
         maxThrust=0;
         for (int i = 1; i <= 8; i++)
         {

@@ -20,6 +20,7 @@ public class AirplanePart : Interactable
 
     public float horsePowerIncrease;
 
+    public bool isEngineBlock;
     private void Update()
     {
         if(attached)
@@ -81,24 +82,45 @@ public class AirplanePart : Interactable
         {
             lastObjectPassed = null;
             CheckMark.instance.Set(false);
+            if (isEngineBlock)
+            {
+                StartCoroutine(ReEnableCollider());
+            }
         }
+
 
     }
 
     /// <summary>
     /// Attaches the current part to the engine
     /// </summary>
-    public void Attach()
+    public IEnumerator Attach()
     {
-        attached=true;
+        if (isEngineBlock)
+        {
+            foreach(BoxCollider collider in GetComponentsInChildren<BoxCollider>())
+            {
+                collider.enabled=false;
+            }
+            foreach (MeshCollider collider in GetComponentsInChildren<MeshCollider>())
+            {
+                collider.enabled = false;
+            }
+            GetComponent<MeshCollider>().enabled=true;
+        }
+        attached =true;
         GetComponent<PickupCarry_Object>().pickupable=false;
-        GetComponent<Rigidbody>().constraints=RigidbodyConstraints.FreezeAll;
+        if(!isEngineBlock)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        }
         transform.SetParent(lastObjectPassed.transform);
         lastObjectPassed.GetComponent<AttachableSpot>().filled=true;
         lastObjectPassed = null;
         CheckMark.instance.Set(false);
         EngineManager.instance.AddPart(partName,horsePowerIncrease);
         StartCoroutine("FixPosition");
+        yield return null;
     }
 
     /// <summary>
@@ -116,15 +138,34 @@ public class AirplanePart : Interactable
     /// <summary>
     /// Detaches the part from the engine
     /// </summary>
-    public void Detach()
+    public IEnumerator Detach()
     {
+      
         attached = false;
         GetComponent<PickupCarry_Object>().pickupable = true;
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        transform.parent.GetComponent<AttachableSpot>().filled = true;
+        if(!isEngineBlock)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        }
+        transform.parent.GetComponent<AttachableSpot>().filled = false;
         transform.parent=null;
         GetComponent<Collider>().enabled = true;
         EngineManager.instance.RemovePart(partName, horsePowerIncrease);
+        yield return null;
+    }
+
+    private IEnumerator ReEnableCollider()
+    {
+        foreach (BoxCollider collider in GetComponentsInChildren<BoxCollider>())
+        {
+            collider.enabled = true;
+            yield return null;
+        }
+        foreach (MeshCollider collider in GetComponentsInChildren<MeshCollider>())
+        {
+            collider.enabled = true;
+            yield return null;
+        }
     }
 
 
