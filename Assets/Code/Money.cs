@@ -10,6 +10,7 @@ public class Money : MonoBehaviour {
     public void Take()
     {
         PlayerManager.instance.money+=amount;
+        PlayerManager.instance.UpdateUI();
         transform.root.GetComponent<JobGiver>().mySpot.DeleteItems();
         transform.root.GetComponent<JobGiver>().GoBackToIdle();
         Destroy(this.gameObject);

@@ -821,7 +821,7 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 		}
 			
 		Sounds();
-		ResetCar();
+		//ResetCar();
 
 		if(useDamage)
 			Damage();

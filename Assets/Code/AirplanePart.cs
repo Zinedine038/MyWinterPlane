@@ -140,13 +140,12 @@ public class AirplanePart : Interactable
     /// </summary>
     public IEnumerator Detach()
     {
-      
+        if (!isEngineBlock)
+        {
+            GetComponent<Rigidbody>().constraints= RigidbodyConstraints.None;
+        }
         attached = false;
         GetComponent<PickupCarry_Object>().pickupable = true;
-        if(!isEngineBlock)
-        {
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        }
         transform.parent.GetComponent<AttachableSpot>().filled = false;
         transform.parent=null;
         GetComponent<Collider>().enabled = true;

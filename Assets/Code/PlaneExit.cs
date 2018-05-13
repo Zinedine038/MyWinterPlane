@@ -33,6 +33,10 @@ public class PlaneExit : MonoBehaviour
                 yield return new WaitForSeconds(2f);
             }
         }
+        if(AirplaneManager.instance.thrust==0)
+        {
+            Handbrake.instance.engaged = true;
+        }
         fps.transform.position = placementPlayer.position;
         fps.transform.eulerAngles = placementPlayer.eulerAngles;
         fps.transform.SetParent(null);

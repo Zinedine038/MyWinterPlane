@@ -32,6 +32,7 @@ public class PlaneEnter : MonoBehaviour {
         {
             AirplaneManager.instance.engineSpot.transform.GetChild(0).gameObject.SetActive(false);
         }
+        Handbrake.instance.engaged = false;
         yield return new WaitForSeconds(2f);
         pe.enabled = true;
     }
