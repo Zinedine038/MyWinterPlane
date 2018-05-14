@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: d2b7d6565b7526348a2457d525c6447b
+timeCreated: 1522143772
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Beams
+    100002: Door
+    100004: Doornob
+    100006: //RootNode
+    100008: Floor
+    100010: Frontpiece
+    100012: Glass
+    100014: House
+    100016: Roof
+    100018: Support
+    100020: Window Inner Frame
+    100022: Window Outer Frame
+    100024: Chimney
+    100026: Lanterns
+    100028: Railing
+    100030: Stairs
+    400000: Beams
+    400002: Door
+    400004: Doornob
+    400006: //RootNode
+    400008: Floor
+    400010: Frontpiece
+    400012: Glass
+    400014: House
+    400016: Roof
+    400018: Support
+    400020: Window Inner Frame
+    400022: Window Outer Frame
+    400024: Chimney
+    400026: Lanterns
+    400028: Railing
+    400030: Stairs
+    2300000: Beams
+    2300002: Door
+    2300004: Doornob
+    2300006: Floor
+    2300008: Frontpiece
+    2300010: Glass
+    2300012: House
+    2300014: Roof
+    2300016: Support
+    2300018: Window Inner Frame
+    2300020: Window Outer Frame
+    2300022: Chimney
+    2300024: //RootNode
+    2300026: Lanterns
+    2300028: Railing
+    2300030: Stairs
+    3300000: Beams
+    3300002: Door
+    3300004: Doornob
+    3300006: Floor
+    3300008: Frontpiece
+    3300010: Glass
+    3300012: House
+    3300014: Roof
+    3300016: Support
+    3300018: Window Inner Frame
+    3300020: Window Outer Frame
+    3300022: Chimney
+    3300024: //RootNode
+    3300026: Lanterns
+    3300028: Railing
+    3300030: Stairs
+    4300000: House
+    4300002: Window Outer Frame
+    4300004: Support
+    4300006: Beams
+    4300008: Roof
+    4300010: Floor
+    4300012: Frontpiece
+    4300014: Window Inner Frame
+    4300016: Glass
+    4300018: Door
+    4300020: Doornob
+    4300022: Railing
+    4300024: Stairs
+    4300026: Chimney
+    4300028: Lanterns
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
