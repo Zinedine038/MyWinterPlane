@@ -26,7 +26,7 @@ public class PlaneExit : MonoBehaviour
     {
         if (AirplaneManager.instance.engineSpot.filled)
         {
-            AirplaneManager.instance.engineSpot.transform.GetChild(0).gameObject.SetActive(true);
+            //AirplaneManager.instance.engineSpot.transform.GetChild(0).gameObject.SetActive(true);
             if (apm.engineOn)
             {
                 apm.TurnOffEngine();

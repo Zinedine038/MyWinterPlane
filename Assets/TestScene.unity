@@ -4045,7 +4045,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1524951422422786, guid: f1a1a5ed87fad844ab0629b6edec5b7e, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64112844198111104, guid: f1a1a5ed87fad844ab0629b6edec5b7e,
         type: 2}
@@ -7638,7 +7638,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachClip: {fileID: 8300000, guid: d50a2d7850d64e1489fe6f55d3ba76fd, type: 3}
-  attachedParts: []
+  attachedParts:
+  - Crankshaft
+  - Piston5
+  - Piston6
+  - Piston7
+  - Piston8
+  - Piston1
+  - Piston2
+  - Piston3
+  - Piston4
+  - HeadGasket
+  - HeadGasket
+  - CylinderHead
+  - CylinderHead
+  - Sparkplug
+  - Sparkplug
+  - Sparkplug
+  - Sparkplug
+  - Sparkplug
+  - Sparkplug
+  - Sparkplug
+  - Sparkplug
+  - Camshaft2
+  - Camshaft1
+  - Camshaft4
+  - Camshaft3
+  - RockerCover
+  - TimingBelt
+  - TimingCover
+  - CrankshaftPulley
+  - Dynamo
+  - Fanbelt
+  - Carterpan
+  - RockerCover
+  - Distributor
+  - Electronics1
+  - Electronics2
+  - Electronics1-2
+  - Electronics2-2
+  - IntakeManifold
+  - AirFilter
+  - FuelRail
+  - FuelRail
   extraPower: 0
 --- !u!4 &540243162
 Transform:
@@ -10610,6 +10652,7 @@ MonoBehaviour:
   openClosed: 0
   anim: {fileID: 1808828381}
   doorName: Boot
+  engineCompartment: 0
 --- !u!65 &744987755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12242,6 +12285,7 @@ MonoBehaviour:
   openClosed: 0
   anim: {fileID: 1118370213}
   doorName: EngineCompartment
+  engineCompartment: 1
 --- !u!4 &917253845
 Transform:
   m_ObjectHideFlags: 0
@@ -12313,6 +12357,7 @@ MonoBehaviour:
   openClosed: 0
   anim: {fileID: 1118370213}
   doorName: Door
+  engineCompartment: 0
 --- !u!65 &918055191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16296,7 +16341,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1514196025798430, guid: 3528cc9f9e94d544a96012f77d138680, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114394767899548968, guid: 3528cc9f9e94d544a96012f77d138680, type: 2}

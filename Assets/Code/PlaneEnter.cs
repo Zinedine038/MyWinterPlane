@@ -28,10 +28,10 @@ public class PlaneEnter : MonoBehaviour {
         eyes.transform.localEulerAngles = new Vector3(0, 0, 0);
         apm.enabled = true;
         mouseLook.enabled = true;
-        if (AirplaneManager.instance.engineSpot.filled)
-        {
-            AirplaneManager.instance.engineSpot.transform.GetChild(0).gameObject.SetActive(false);
-        }
+        //if (AirplaneManager.instance.engineSpot.filled)
+        //{
+        //    AirplaneManager.instance.engineSpot.transform.GetChild(0).gameObject.SetActive(false);
+        //}
         Handbrake.instance.engaged = false;
         yield return new WaitForSeconds(2f);
         pe.enabled = true;
